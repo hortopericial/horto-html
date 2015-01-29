@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* CSS Document */
+select option{
+	background:#FFF;
+	color:#000;
+}
+#resp
+{
+	background:#666;
+	position:absolute;
+	margin-left:30px;
+	margin-top:40px;
+	padding:15px;
+	width:235px;
+	color:#FFF;
+	text-shadow: 2px 2px 2px #334729;
+	font-size:18px;
+	border-style:solid;
+	bottom:65px;
+	border-radius:10px;
+	-webkit-box-shadow: 3px 3px 5px  #444;
+    -moz-box-shadow: 3px 3px 5px #444;
+	box-shadow:3px 3px 4px 0px rgba(50, 50, 50, 0.65);
+	}
+		
+select{
+   	width: 170px;
+    color: #333;
+    font-size:14px;
+    line-height:1.2em;
+    margin: 0 0 10px;
+    padding: 4px 0;
+    border:1px solid #444;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: "";
+	background: #a9db80; /
+	background: -moz-linear-gradient(top,  #a9db80 0%, #96c56f 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9db80), color-stop(100%,#96c56f));
+	background: -webkit-linear-gradient(top,  #a9db80 0%,#96c56f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a9db80 0%,#96c56f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a9db80 0%,#96c56f 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a9db80 0%,#96c56f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=0 ); 
+	-webkit-box-shadow: 3px 3px 5px  #444;
+    -moz-box-shadow: 3px 3px 5px #444;
+	box-shadow:3px 3px 4px 0px rgba(50, 50, 50, 0.65);
+	
+}
+#layout {
+   position:relative;
+	height:0px;  
+    width:0px;  
+    background:#FFF;
+    z-index:100; 
+	top:10px;
+	margin-top:0 px;
+	margin-left:14px;
+    border:2px solid #72aa00; 
+    padding:2px;  
+    font-size:15px;  
+    -moz-box-shadow: 0 0 5px #030;
+    -webkit-box-shadow: 0 0 5px #030;
+    box-shadow:9px 9px 16px 0px rgba(50, 50, 50, 0.65);
+	border-radius:15px;	
+}
+
+#layout_dia {
+    position:relative;
+	height:0px;  
+    width:0px;  
+    background:#FFF;
+    z-index:100; 
+	top:10px;
+	margin-top:0 px;
+	margin-left:14px;
+    border:2px solid #72aa00; 
+    padding:2px;  
+    font-size:15px;  
+    -moz-box-shadow: 0 0 5px #030;
+    -webkit-box-shadow: 0 0 5px #030;
+    box-shadow:9px 9px 16px 0px rgba(50, 50, 50, 0.65);
+	border-radius:15px;	
+}
+
+.inFrame{
+	height:400px;  
+    width:700px;
+	background:#72aa00;
+	border-radius:13px;	
+}
+
+#intitle
+{
+	color:#FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:22px;
+	padding-left:20px;
+	padding-top:10px;
+	text-shadow: 2px 2px 2px #334729;
+	text-decoration:underline;
+}
+#warn
+{
+	color:#FFF;
+	font-family:Tahoma, Geneva, sans-serif;
+	padding:20px;
+	font-size:16px;
+	text-shadow: 1px 1px 1px #334729;
+	height:80px;
+	
+}
+#pergunta
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#FFF;
+	padding:20px;
+	padding-top:0px;
+	text-shadow: 1px 1px 1px #334729;
+	width:330px;
+	font-size:16px;
+	
+}
+#nextButton
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#FFF;
+	border:2px solid #72aa00;
+	width:150px;
+	height:30px;
+	-moz-box-shadow: 0 0 5px #030;
+    -webkit-box-shadow: 0 0 5px #030;
+    box-shadow:9px 9px 16px 0px rgba(50, 50, 50, 0.65);
+	border-radius:10px;	
+	border:2px solid #FFF;
+	cursor:pointer;
+	text-align:center;
+	float:right;
+	line-height: 30px;
+	margin-right:30px;
+
+}
+#nextButton:hover
+{
+font-family:Tahoma, Geneva, sans-serif;
+	color:#FFF;
+	border:2px solid #72aa00;
+	width:150px;
+	height:30px;
+	-moz-box-shadow: 0 0 5px #030;
+    -webkit-box-shadow: 0 0 5px #030;
+
+	border-radius:10px;	
+	border:2px solid #FFF;
+	cursor:pointer;
+	text-align:center;
+	float:right;
+	line-height: 30px;
+	margin-right:32px;
+}
+#buttonsBar{
+	width:600px;
+}
+#resposta
+{
+	float:right;
+	margin-top:10px;
+}
+.quest
+{
+	float:left;
+	color:#FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	margin-left:10px;
+	margin-top:18px;
+	padding-left:20px;
+	padding-top:0px;
+	text-shadow: 2px 2px 2px #334729;
+	width:290px;
+}
+#imagemEspecie
+{
+	float:right;
+	height:250px;
+	width::340px;
+	min-height:250px;
+
+	max-width:340px;
+	min-width:340px;
+	margin-right:20px;
+	margin-top:20px;
+	cursor:pointer;
+	
+}
+#imagemEspecie img
+{
+	border:2px solid #FFF;
+	max-width: 100%;
+    max-height: 100%;
+}
+
+#imagemDoenca
+{
+	position:relative;
+	float:right;
+	height:250px;
+	width::340px;
+	min-height:250px;
+	max-width:340px;
+	min-width:340px;
+	margin-right:20px;
+	margin-top:60px;
+	cursor:pointer;
+		
+}
+#imagemDoenca img
+{
+	border:2px solid #FFF;
+	max-width: 100%;
+    max-height: 100%;
+}
+#perguntas_layer
+{
+	float:left;
+	width:340px;
+	border-style:none;
+	
+}
+#restart{
+	color:#FFF;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	cursor:pointer;
+	box-shadow:3px 3px 4px 0px rgba(50, 50, 50, 0.65);
+	text-shadow: 2px 2px 2px #334729;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#FFF;
+	border:2px solid #72aa00;
+	width:150px;
+	height:30px;
+	-moz-box-shadow: 0 0 5px #030;
+    -webkit-box-shadow: 0 0 5px #030;
+    box-shadow:9px 9px 16px 0px rgba(50, 50, 50, 0.65);
+	border-radius:10px;	
+	border:2px solid #FFF;
+	text-align:center;
+	padding-bottom:14px;
+	line-height: 10px;
+	margin-right:15px;
+}
