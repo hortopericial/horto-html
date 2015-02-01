@@ -79,20 +79,64 @@ $(function() {
 			return true;
 		}
 	}
+	
+	function existe(box,msg)
+	{
+		var m = box.val();
+		$.ajax(
+		{
+     		url: "checkmail.php",
+        	type: 'POST',
+			data:{m:m},
+     	    async:false,
+     	    success: function (q){
+			saida = q;
+			}
+		});
+		if (saida==1)
+		{
+			box.addClass("ui-state-error");
+			updateTips (msg);
+			return false;
+		}
+		else
+		{
+			return true;
+		}		
+	}
  
     function addUser() {
       	var valid = true;
       	allFields.removeClass( "ui-state-error" ); 
-	    valid = valid && checkLength( name, "Nome", 5, 16 );
+	    valid = valid && checkLength( name, "Nome", 5, 56 );  	
+		valid = valid && checkRegexp( email, emailRegex, "Formato de email inválido, xpto@dominio.com" );
       	valid = valid && checkLength( email, "E-mail", 6, 40 );
       	valid = valid && checkLength( password, "Password", 5, 16 );
  	  	valid = valid && comparar (password,cpassword,"As passwords não incoincidem");	 
       	valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "O nome do utilizador deverá ter caracteres alfa-numéricos podendo ter espaços ou underscores" );
-      	valid = valid && checkRegexp( email, emailRegex, "Formato de email inválido, xpto@dominio.com" );
       	valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password apenas deverá conter caracteres alfa-numéricos" );
-	    if ( valid ) {
-       	//Criar post para guardar e verificar dados
-        	dialog.dialog( "close" );
+		valid = valid && existe(email,"O email inserido já se encontra registado");
+	    if ( valid ) {  		
+			n = name.val();
+			e = email.val();
+			p = password.val(); 
+			dialog.dialog( "close" );
+			$.post('reg_user.php',
+			{ 
+				n:n,
+				p:p,
+				e:e
+			});
+			$( "#dialog_sucess" ).dialog({
+				resizable: false,
+      			modal: true,
+				buttons: {
+					"Fechar":function(){$( "#dialog_sucess" ).dialog( "close" )
+					
+					;}
+				}
+			});
+        	
       	}
       	return valid;
 	}
@@ -290,9 +334,9 @@ function apagar(x) {
   <form>
     <fieldset>
       <label for="name">Nome</label>
-      <input type="text" name="name" id="name" value="Nome Completo" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
+      <input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
       <label for="email">Email (Login)</label>
-      <input type="text" name="email" id="email" value="E-mail" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
+      <input type="text" name="email" id="email"  class="text ui-widget-content ui-corner-all">
       <label for="password">Password</label>
       <input type="password" name="password" id="password" value="xxxxxxx" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
  	 <label for="password">Confirmar Password</label>
@@ -303,6 +347,10 @@ function apagar(x) {
   </form>
 </div>
  
+ 
+ <div id="dialog_sucess" title="Registo Efetuado com Sucesso">
+  <p>Obrigado por ter efetuado o registo!!! </p>
+</div>
 
 
 </body>
