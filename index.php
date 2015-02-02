@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>.: Projecto Horto Pericial:.</title>
-<script src="http://code.jquery.com/jquery-latest.min.js "></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="menufiles/mbcsmbpe09.css" type="text/css" />
 <script type="text/javascript" src="menufiles/mbjsmbpe09.js"></script>
 <?php
@@ -29,7 +29,7 @@
 
 <script type="text/javascript">
 $(function() {
-	var dialog, form,
+	var dialog, form, diagSucess,
 	emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
 	name = $( "#name" ),
     email = $( "#email" ),
@@ -104,7 +104,6 @@ $(function() {
 			return true;
 		}		
 	}
- 
     function addUser() {
       	var valid = true;
       	allFields.removeClass( "ui-state-error" ); 
@@ -127,19 +126,15 @@ $(function() {
 				p:p,
 				e:e
 			});
-			$( "#dialog_sucess" ).dialog({
-				resizable: false,
-      			modal: true,
-				buttons: {
-					"Fechar":function(){$( "#dialog_sucess" ).dialog( "close" )
-					
-					;}
-				}
-			});
+			diagSucess.dialog("open");
         	
       	}
       	return valid;
 	}
+	
+	
+	
+	
  	dialog = $( "#dialog-form" ).dialog({
     	autoOpen: false,
       	height: 380,
@@ -157,6 +152,20 @@ $(function() {
         	allFields.removeClass( "ui-state-error" );
       	}
     });
+	
+	diagSucess  = $( "#dialog_sucess" ).dialog({
+				autoOpen: false,
+				resizable: false,
+      			modal: true,
+				buttons: {
+					"Fechar":function(){$( "#dialog_sucess" ).dialog( "close" )
+					
+					;}
+				}
+			});
+	
+	
+	
  	form = dialog.find( "form" ).on( "submit", function( event ) {
       event.preventDefault();
       addUser();
@@ -252,44 +261,41 @@ function apagar(x) {
 	<div id="conteudo" style="margin:0px;">
 		<div id="banner" style="height: 197px; background-image:url(images/banner.jpg);  width: 1025px;"></div>
         <!-- INICIO DO MENU HORIZONTAL -->
-        <div id="menu2" style=" height: 50px; width: 100%; background-image:url(images/menu.jpg); width: 1024px">
-        	<div id="mbpe09ebul_wrapper" style="float:right;text-shadow: 2px 2px 2px #334729; margin-right:-1px ">
-  				<ul id="mbpe09ebul_table" class="mbpe09ebul_menulist css_menu">
-  					<li><div id ="inicio" class="buttonbg"><a class="button_1">Inicio</a></div></li>
- 					<li><div id ="diagnostico" name ="diagnostico" class="buttonbg"><a>Diagnostico</a></div></li>
-  					<li><div class="buttonbg"><a>Noticias</a></div></li>
-  					<li><div class="buttonbg"><a>Contactos</a></div></li>
-  					<li><div id="acerca" class="buttonbg"><a>Acerca</a></div></li>
-  				</ul>
-			</div>
- 		</div><!-- FIM MENU HORIZONTAL-->
+		<div id="menu2" style=" height: 50px; width: 100%; background-image:url(images/menu.jpg); width: 1024px">
+			<div id="mbpe09ebul_wrapper" style="float:right;text-shadow: 2px 2px 2px #334729; margin-right:-1px ">
+				<ul id="mbpe09ebul_table" class="mbpe09ebul_menulist css_menu">
+					<li><div id ="inicio" class="buttonbg"><a class="button_1">Inicio</a></div></li>
+					<li><div id ="diagnostico" name ="diagnostico" class="buttonbg"><a>Diagnostico</a></div></li>
+					<li><div class="buttonbg"><a>Noticias</a></div></li>
+					<li><div class="buttonbg"><a>Contactos</a></div></li>
+					<li><div id="acerca" class="buttonbg"><a>Acerca</a></div></li>
+				</ul>
+		</div>
+	</div><!-- FIM MENU HORIZONTAL-->
 		<!-- INICIO MENU VERTICAL -->
-		<div class="degrade" id="menu" style="height: 800px; width: 22%; float: left;"> 
+	<div class="degrade" id="menu" style="height: 800px; width: 22%; float: left;"> 
 		<!-- INICIO DIV LOGIN -->	
-       		<div id="login" style=" ;text-shadow: 4px 4px 4px #999;color:#6c6c6c;font:12px Tahoma, Geneva, sans-serif;background-color:#f0fddf; margin:10px 10px 0px 10px;height: 160px;border-style:solid; border-radius:10px; border-width:0px ;border-color:#D5D6DA;box-shadow:  3px 3px 5px 2px rgba(55, 55, 55, 0.3); "> 
-        		<div class="lateral_titulo" style="height: 15px; ">  Utilizador 
-                	<div style=" float:right;width:110px;text-align:right; padding: 0px 10px 0px 0px"> 
-                    	<a href="#" class="lateral_link" style="font:7px Tahoma, Geneva, sans-serif;">Recuperar Password</a>
-               		</div>
-                  
-           		</div>  
-       		  	<!-- PARA ALTERAR QUANDO TIVER O PHP --><a id="centra"><a/>
-                <div style=" float:left; margin-left:15px;margin-top:12px">
-             		<input name="login2" type="text" class="inputbox" id="login2" style=" width:170px" size="10" value="Username (login)"  onfocus="this.value=''" autocomplete="off">
+		<div id="login" style=" ;text-shadow: 4px 4px 4px #999;color:#6c6c6c;font:12px Tahoma, Geneva, sans-serif;background-color:#f0fddf; margin:10px 10px 0px 10px;height: 160px;border-style:solid; border-radius:10px; border-width:0px ;border-color:#D5D6DA;box-shadow:  3px 3px 5px 2px rgba(55, 55, 55, 0.3); "> 
+			<div class="lateral_titulo" style="height: 15px; ">  Utilizador 
+				<div style=" float:right;width:110px;text-align:right; padding: 0px 10px 0px 0px"> 
+					<a href="#" class="lateral_link" style="font:7px Tahoma, Geneva, sans-serif;">Recuperar Password</a>
 				</div>
-               
-				 <div style=" float:left; margin-left:15px;margin-top:8px">
-              		<input name="passwd" type="password" class="inputbox" id="passwd" style="width:170px;"  size="10" value="Password" onfocus="this.value=''" autocomplete="off">
- 				</div>
-                <div name="log_erro" id="log_erro" style="float: none; color: red; margin-left:24px ; vertical-align:text-bottom; font-size: 10px "></div>
-                <div style=" float:left; margin-left:12px;margin-top:12px">
-                	<input type="button" value="ENTRAR"name="loggar" id="loggar" style="width:70px; font:10px Tahoma, Geneva, sans-serif; margin:4px"/>
-                </div>
-              <div style=" float:left; margin-left:15px;margin-top:12px">
-                	<input type="button" value="REGISTAR"name="registar_log" id="registar_log"  style=" width:80px; font:10px Tahoma, Geneva, sans-serif; margin:4px"/>
-                    
+			</div>  
+			<a id="centra"><a/>
+			<div style=" float:left; margin-left:15px;margin-top:12px">
+				<input name="login2" type="text" class="inputbox" id="login2" style=" width:170px" size="10" value="Username (login)"  onfocus="this.value=''" autocomplete="off">
+			</div>
+			<div style=" float:left; margin-left:15px;margin-top:8px">
+				<input name="passwd" type="password" class="inputbox" id="passwd" style="width:170px;"  size="10" value="Password" onfocus="this.value=''" autocomplete="off">
+			</div>
+			<div name="log_erro" id="log_erro" style="float: none; color: red; margin-left:24px ; vertical-align:text-bottom; font-size: 10px "></div>
+			<div style=" float:left; margin-left:12px;margin-top:12px">
+				<input type="button" value="ENTRAR"name="loggar" id="loggar" style="width:70px; font:10px Tahoma, Geneva, sans-serif; margin:4px"/>
+			</div>
+			<div style=" float:left; margin-left:15px;margin-top:12px">
+				<input type="button" value="REGISTAR"name="registar_log" id="registar_log"  style=" width:80px; font:10px Tahoma, Geneva, sans-serif; margin:4px"/>
                     <!-- PARA ALTERAR QUANDO TIVER O PHP -->
-              </div>
+			</div>
                 
             </div>
             <div name="meteo" id="meteo" style="width:100%; height:150px">
@@ -338,18 +344,21 @@ function apagar(x) {
       <label for="email">Email (Login)</label>
       <input type="text" name="email" id="email"  class="text ui-widget-content ui-corner-all">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" value="xxxxxxx" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
- 	 <label for="password">Confirmar Password</label>
-      <input type="password" name="c_password" id="c_password" value="yyyyyyy" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
-      <!-- Allow form submission with keyboard without duplicating the dialog button -->
-      <input type="submit"  tabindex="-1" style="position:absolute; top:-1000px">
-    </fieldset>
-  </form>
+	<input type="password" name="password" id="password" value="xxxxxxx" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
+		<label for="password">Confirmar Password</label>
+		<input type="password" name="c_password" id="c_password" value="yyyyyyy" onfocus="apagar(this.id)" class="text ui-widget-content ui-corner-all">
+		<input type="submit"  tabindex="-1" style="position:absolute; top:-1000px">
+		</fieldset>
+	</form>
 </div>
  
  
- <div id="dialog_sucess" title="Registo Efetuado com Sucesso">
-  <p>Obrigado por ter efetuado o registo!!! </p>
+ <div id="dialog_sucess" title="Registo Efetuado com Sucesso" >
+ 	<br /> </br>
+		<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+			<label>Obrigado por ter efetuado o registo !!!</label>
+      
+  </p>
 </div>
 
 
