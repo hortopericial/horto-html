@@ -2,7 +2,6 @@
 
 <?php
 	include ("connect.php");
-	$teste = "aqui";
 	$mail = $_POST['m'];
 	mysql_query('SET CHARACTER SET utf8');
 	$query = "SELECT count(email) from utilizadores where email='$mail'";
